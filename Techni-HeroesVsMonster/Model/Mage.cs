@@ -9,6 +9,7 @@ namespace Techni_HeroesVsMonster
 {
     public class Mage : Personnage
     {
+
         private int _Mana;
         public int Mana { get; set; }
         public Mage(int Intel)
@@ -16,14 +17,14 @@ namespace Techni_HeroesVsMonster
         Mana = Intel*2;
     }
 
-        public override Skill(Mage hero, Personnage monster)
+        public override void Skill(Personnage monster)
         {
             int dégât = 0;
-            dégât = hero.Intel * 2;
+            dégât = this.Intel * 2;
 
-            if (hero.Mana >= 6)
+            if (this.Mana >= 6)
             {
-                Console.WriteLine($"{hero.Name} brandit son bâton et envoie une boule de feu. Il inflige {dégât} dégâts.");
+                Console.WriteLine($"{this.Name} brandit son bâton et envoie une boule de feu. Il inflige {dégât} dégâts.");
                 monster.Hp -= dégât;
                 hero.Mana -= 6;
             }

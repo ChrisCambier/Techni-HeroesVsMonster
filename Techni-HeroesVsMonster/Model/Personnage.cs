@@ -11,7 +11,7 @@ namespace Techni_HeroesVsMonster.Model
     {
         
        
-        private int _Hp = 0;
+        protected int _Hp = 0;
 
         public int Str {  get; set; }
         public int Hp
@@ -77,25 +77,19 @@ namespace Techni_HeroesVsMonster.Model
             
         }
 
-        public virtual void Tank(Personnage hero, Personnage monster)
+        public virtual void Tank(Personnage monster)
         {
-            hero.Hp -= monster.Str;
+            this._Hp -= monster.Str;
         }
 
-        public void Strike(Personnage hero,Personnage monster)
+        public void Strike(Personnage monster)
         {
-            monster.Hp -= hero.Str;
+            monster._Hp -= this.Str;
         }
 
-        public virtual void Skill()
+        public virtual void Skill(Personnage monster)
         {
            // methode a gere avec les differente Class
-        }
-
-        public void Healing(Personnage hero)
-        {
-            if (hero.Inventaire)
-            
         }
 
     }
