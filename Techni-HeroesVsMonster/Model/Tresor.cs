@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Techni_HeroesVsMonster
 {
-    public class Tresor : ILoot
+    public class Tresor 
     {
         public int NbreGold { get; set; }
         public int NbrePotion { get; set; }
@@ -20,7 +20,7 @@ namespace Techni_HeroesVsMonster
         public void TakeGold(int nbrGold)
         {
             this.NbreGold -= 0;
-            Hero.Gold += nbreGold;
+            Hero.Inventaire.Items.Stock += nbreGold;
         }
 
         public void TakePeau(int nbrPeau)

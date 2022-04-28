@@ -11,12 +11,13 @@ namespace Techni_HeroesVsMonster
         private int _Mana;
         public int Mana { get; set; }
         public Mage(int Intel)
-    {
-        Mana = Intel*2;
-    }
+        {
+            Mana = Intel * 2;
+        }
 
         public virtual Fireball(Mage.Intel, Mage.Mana)
         {
 
         }
+    }
 }
