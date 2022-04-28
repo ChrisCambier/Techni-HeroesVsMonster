@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Techni_HeroesVsMonster.Model
 {
-    public class Items
+    public class Hero:Personnage
     {
-        public enum inv
-        {
-            Gold,Potion,cuir
-        }
+
     }
 }

@@ -8,6 +8,19 @@ namespace Techni_HeroesVsMonster.Model
 {
     public class Inventaire
     {
-        List<Items>inventaire=new List<Items>();
+        public enum Items
+        {
+            Gold, Potion, Cuir
+        }
+
+        Dictionary<Items,int> items = new Dictionary<Items,int>();
+
+        public int this[Items type]
+        {
+            get { return items[type]; }
+
+            set { items[type] = value; }
+
+        }
     }
 }
