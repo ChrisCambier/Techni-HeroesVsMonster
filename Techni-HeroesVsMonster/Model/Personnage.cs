@@ -25,11 +25,13 @@ namespace Techni_HeroesVsMonster.Model
         public string Nom { get; set; }
         public string Skin { get; set; }
 
+        public Inventaire Inventaire;
+///////////////////////////////////////////////////////////////////////////////proprieter 
        
 
 
         
-        private bool Combat(Personnage Hero ,Personnage Monster)
+        private bool Combat(Personnage Hero ,Personnage Monster)//methode a appeler par evenement 
         {
             int choix = 0;
             Boolean Mort=false;
@@ -85,7 +87,16 @@ namespace Techni_HeroesVsMonster.Model
             monster.Hp -= hero.Str;
         }
 
-        public abstract void Skill();
-       
+        public virtual void Skill()
+        {
+           // methode a gere avec les differente Class
+        }
+
+        public void Healing(Personnage hero)
+        {
+            if (hero.Inventaire)
+            
+        }
+
     }
 }
