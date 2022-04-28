@@ -22,20 +22,25 @@ namespace Techni_HeroesVsMonster.Model
         
         public int End { get; set; }
         public int Intel { get; set; }
-        public string Nom { get; set; }
+        public string Name { get; set; }
         public string Skin { get; set; }
 
         public Inventaire Inventaire;
+
+        public Personnage()
+        {
+            Inventaire = new Inventaire(this);
+        }
 ///////////////////////////////////////////////////////////////////////////////proprieter 
        
 
 
         
-        private bool Combat(Personnage Hero ,Personnage Monster)//methode a appeler par evenement 
+        private bool Combat(Personnage Monster)//methode a appeler par evenement 
         {
             int choix = 0;
             Boolean Mort=false;
-            Console.WriteLine($"{Monster.Nom} veux te goumer");
+            Console.WriteLine($"{Monster.Name} veux te goumer");
 
 
 
@@ -53,7 +58,7 @@ namespace Techni_HeroesVsMonster.Model
                 {
                     case 1:
                         Console.WriteLine("Pattate de forain");
-                        Strike(Hero, Monster);
+                        Strike( Monster);
 
                         break;
                     case 2:
@@ -66,9 +71,9 @@ namespace Techni_HeroesVsMonster.Model
 
                 }
 
-                Tank(Hero, Monster);
+                Tank(this, Monster);
 
-                if (Hero.Hp <= 0 || Monster.Hp <= 0)
+                if (Hp <= 0 || Monster.Hp <= 0)
                 {
                     Mort=true;
                 }
@@ -82,9 +87,9 @@ namespace Techni_HeroesVsMonster.Model
             hero.Hp -= monster.Str;
         }
 
-        public void Strike(Personnage hero,Personnage monster)
+        public void Strike(Personnage target)
         {
-            monster.Hp -= hero.Str;
+            target.Hp -= Str;
         }
 
         public virtual void Skill()
@@ -92,10 +97,10 @@ namespace Techni_HeroesVsMonster.Model
            // methode a gere avec les differente Class
         }
 
-        public void Healing(Personnage hero)
+        public void Healing()
         {
-            if (hero.Inventaire)
-            
+            Inventaire.UseItem(Items.Potion);   
+            //voir Useitem
         }
 
     }
