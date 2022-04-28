@@ -12,9 +12,9 @@ namespace Techni_HeroesVsMonster
         private int _Mana;
         public int Mana { get; set; }
         public Mage(int Intel)
-    {
-        Mana = Intel*2;
-    }
+        {
+            Mana = Intel * 2;
+        }
 
         public override Skill(Mage hero, Personnage monster)
         {
@@ -32,4 +32,5 @@ namespace Techni_HeroesVsMonster
                 Console.WriteLine("Vous n'avez plus assez de mana pour lancer un sort.");
             }
         }
+    }
 }
