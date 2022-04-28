@@ -9,7 +9,7 @@ namespace Techni_HeroesVsMonster
 {
     public class Barbare : Personnage
     {
-        public override Skill(Personnage hero, Personnage monster)
+        public override void Skill(Personnage monster)
         {
             int dégât = 0,
                 retour = 0;

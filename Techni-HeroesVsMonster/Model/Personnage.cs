@@ -11,7 +11,7 @@ namespace Techni_HeroesVsMonster.Model
     {
         
        
-        private int _Hp = 0;
+        protected int _Hp = 0;
 
         public int Str {  get; set; }
         public int Hp
@@ -82,9 +82,9 @@ namespace Techni_HeroesVsMonster.Model
             
         }
 
-        public virtual void Tank(Personnage hero, Personnage monster)
+        public virtual void Tank(Personnage monster)
         {
-            hero.Hp -= monster.Str;
+            this._Hp -= monster.Str;
         }
 
         public void Strike(Personnage target)
@@ -92,7 +92,7 @@ namespace Techni_HeroesVsMonster.Model
             target.Hp -= Str;
         }
 
-        public virtual void Skill()
+        public virtual void Skill(Personnage monster)
         {
            // methode a gere avec les differente Class
         }

@@ -29,7 +29,17 @@ namespace Techni_HeroesVsMonster
 
         public void Randomize()
         {
-            throw new NotImplementedException();
+            Biome[,] position = new Biome[30, 30];
+            Random rnd = new Random();
+
+            for (int i = 0; i < 30; i++)
+            {
+                for (int j = 0; j < 30; j++)
+                {
+                    position[i, j] = (Biome)rnd.Next(0, 5);
+                    Console.WriteLine(position[i, j]); // Pas sûr que ça affiche un tableau xD
+                }
+            }
         }
         public void Display()
         {
@@ -121,5 +131,13 @@ namespace Techni_HeroesVsMonster
         }
 
 
+    }
+    enum Biome
+    {
+        Grass,
+        Tree,
+        Water,
+        Ennemy,
+        Tresor
     }
 }
